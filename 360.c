@@ -8,21 +8,12 @@ int main(int argc, char *argv[]){
     char buffer[255];
 
     if(argc == 1){
-        DIR *dir;
-        struct dirent *ent;
-        if ((dir = opendir ("c:\\src\\")) != NULL) {
-          /* print all the files and directories within directory */
-          while ((ent = readdir (dir)) != NULL) {
-            printf ("%s\n", ent->d_name);
-          }
-          closedir (dir);
-        } else {
-          /* could not open directory */
-          perror ("");
-        }
+      printf("not enough args please include a file to print");
     }
 
     questions = fopen(argv[1], "r");
+
+    printf("\n");
 
     while(fgets(buffer, 255, questions) != NULL){
         printf("%s",buffer);
